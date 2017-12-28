@@ -9,25 +9,16 @@ export default class Main {
 
     paint() {
         ctx.font = "20px Georgia"
-        ctx.fillText('hello world!', 10, 50)
+        ctx.fillText('hello world', 10, 50)
 
         ctx.font = "30px Verdana"
         // 创建渐变
-        var gradient = ctx.createLinearGradient(0, 0, window.innerWidth,0)
+        var gradient = ctx.createLinearGradient(0, 0, window.innerWidth, 0)
         gradient.addColorStop("0","magenta")
         gradient.addColorStop("0.5","blue")
         gradient.addColorStop("1.0","red")
         // 用渐变填色
-        ctx.fillStyle=gradient
-        ctx.fillText("w3school.com.cn",10,90)
-
-        //设置对象起始点和终点
-        ctx.moveTo(10, 10)
-        ctx.lineTo(200, 200)
-        //设置样式
-        ctx.lineWidth = 2
-        ctx.strokeStyle = "#F5270B"
-        //绘制
-        ctx.stroke()
+        ctx.fillStyle = gradient
+        ctx.fillText("微信小游戏", 10, 90)
     }
 }
