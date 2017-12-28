@@ -1,0 +1,19 @@
+/target/
+/bin/
+/frontend/bin-debug/
+
+# Idea
+.idea
+*.iml
+
+# Maven
+target/
+
+# Vim
+*.swp
+/bin/
+
+# Eclipse
+.settings/
+.classpath
+.project
