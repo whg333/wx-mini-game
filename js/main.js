@@ -4,6 +4,36 @@ let ctx   = canvas.getContext('2d')
 
 export default class Main {
     constructor() {
+        this.restart()
+    }
+
+    restart() {
+        window.requestAnimationFrame(
+            this.loop.bind(this),
+            canvas
+        )
+    }
+
+    loop() {
+        this.update()
+        this.render()
+        window.requestAnimationFrame(
+          this.loop.bind(this),
+          canvas
+        )
+    }
+
+    // 游戏逻辑更新主函数
+    update() {
+
+    }
+
+    /**
+     * canvas重绘函数
+     * 每一帧重新绘制所有的需要展示的元素
+     */
+    render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
         this.paint()
     }
 
@@ -21,17 +51,6 @@ export default class Main {
         // 用渐变填色
         ctx.fillStyle = gradient
         ctx.fillText("微信小游戏", 10, 90)
-
-        window.requestAnimationFrame(
-          this.loop.bind(this),
-          canvas
-        )
     }
 
-    loop() {
-      window.requestAnimationFrame(
-        this.loop.bind(this),
-        canvas
-      )
-    }
 }
